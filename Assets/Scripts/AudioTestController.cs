@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class AudioTestController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip clip_A;
+    public AudioClip clip_B;
+    public AudioClip clip_C;
 
-    // Update is called once per frame
+    public string playSound_A_Key = "1";
+    public string playSound_B_Key = "2";
+    public string playSound_C_Key = "3";
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(playSound_A_Key))
+        {
+            AudioManager.instance.PlayNewSound(clip_A, gameObject);
+        }
     }
 }
